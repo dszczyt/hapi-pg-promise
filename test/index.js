@@ -26,11 +26,11 @@ lab.beforeEach((done) => {
         path: '/',
         handler: function (req, reply) {
 
-            if (req.query.kill) {
+            /*if (req.query.kill) {
                 req.pg.kill = true;
-            }
+            }*/
 
-            reply('hapi-node-postgres, at your service');
+            reply('hapi-pg-promise, at your service');
         }
     });
 
@@ -49,8 +49,10 @@ lab.experiment('Postgres Plugin', () => {
 
         server.register(Plugin, (err) => {
 
-            Code.expect(err).to.not.exist();
-            done();
+            server.start(() => {
+                Code.expect(err).to.not.exist();
+                done();
+            });
         });
     });
 
@@ -65,6 +67,7 @@ lab.experiment('Postgres Plugin', () => {
 
         server.register(Plugin, (err) => {
 
+            server.start(() => {});
             Code.expect(err).to.not.exist();
 
             server.inject(request, (response) => {
