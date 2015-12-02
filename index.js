@@ -37,15 +37,15 @@ exports.register = function (server, options, next) {
     server.on('start', function(server, next) {
 
         console.log('server start');
-        db = pgp(config.cn).connect();
-        db.then(function(obj) { sco = sco; });
+        server.db = pgp(config.cn).connect();
+        server.db.then(function(obj) { sco = sco; });
         next();
     });
 
     server.ext('onPreHandler', function(request, reply) {
 
         console.log('request');
-        db.then(() => {
+        request.server.db.then(() => {
 
             request.sco = sco;
             reply.continue();
@@ -76,12 +76,12 @@ exports.register = function (server, options, next) {
     });*/
 
 
-    server.on('stop', (request, err) => {
+    server.on('stop', (server, err) => {
 
-        if (request.pgp) {
+        /*if (request.pgp) {
             request.pgp.end();
             //request.pgp.done(request.pg.kill);
-        }
+        }*/
     });
 
 

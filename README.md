@@ -1,3 +1,5 @@
+# WIP - DON'T USE IT !!!
+
 # hapi-node-postgres
 
 Wrap requests with a Postgres connection.
