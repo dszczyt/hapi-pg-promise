@@ -1,6 +1,6 @@
 {
 	"name": "hapi-pg-promise",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Wrap requests with a pg connection.",
 	"keywords": [
 		"hapi",
@@ -24,8 +24,8 @@
 		"test-cover": "./node_modules/lab/bin/lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
 	},
 	"dependencies": {
-    "hapi": "^11.x.x",
-    "pg-promise": "^2.x.x",
+		"hapi": "^11.x.x",
+		"pg-promise": "^2.x.x",
 		"hoek": "^3.x.x"
 	},
 	"devDependencies": {
@@ -34,7 +34,7 @@
 		"proxyquire": "^1.x.x"
 	},
 	"peerDependencies": {
-		"pg-promise": "^4.x.x"
+		"pg-promise": "^2.x.x"
 	},
 	"engines": {
 		"node": ">=4.0.0"
