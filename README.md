@@ -1,4 +1,4 @@
-# hapi-node-postgres
+# hapi-pg-promise
 
 Wrap requests with a Postgres connection using promises.
 
