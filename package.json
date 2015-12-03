@@ -1,44 +1,44 @@
 {
-  "name": "hapi-pg-promise",
-  "version": "1.0.0",
-  "description": "Wrap requests with a pg connection.",
-  "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/lab/bin/lab -c -L",
-    "test-cover": "./node_modules/lab/bin/lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dszczyt/hapi-pg-promise"
-  },
-  "keywords": [
-    "hapi",
-    "pg",
-    "postgres",
-    "promise"
-  ],
-  "engines": {
-    "node": ">=4.0.0"
-  },
-  "author": "Damien SZCZYT <damien.szczyt@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dszczyt/hapi-pg-promise/issues"
-  },
-  "homepage": "https://github.com/dszczyt/hapi-pg-promise",
-  "devDependencies": {
-    "code": "^2.x.x",
-    "hapi": "^11.x.x",
-    "lab": "^7.x.x",
-    "pg": "^4.x.x",
-    "pg-native": "^1.x.x",
-    "pg-promise": "^2.x.x",
-    "proxyquire": "^1.x.x"
-  },
-  "peerDependencies": {
-    "pg": "^4.x.x"
-  },
-  "dependencies": {
-    "hoek": "^3.x.x"
-  }
+	"name": "hapi-pg-promise",
+	"version": "0.0.1",
+	"description": "Wrap requests with a pg connection.",
+	"keywords": [
+		"hapi",
+		"pg",
+		"postgres",
+		"promise"
+	],
+	"homepage": "https://github.com/dszczyt/hapi-pg-promise",
+	"bugs": {
+		"url": "https://github.com/dszczyt/hapi-pg-promise/issues"
+	},
+	"license": "MIT",
+	"author": "Damien SZCZYT <damien.szczyt@gmail.com>",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dszczyt/hapi-pg-promise"
+	},
+	"scripts": {
+		"test": "./node_modules/lab/bin/lab -c -L",
+		"test-cover": "./node_modules/lab/bin/lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
+	},
+	"dependencies": {
+		"hoek": "^3.x.x"
+	},
+	"devDependencies": {
+		"code": "^2.x.x",
+		"hapi": "^11.x.x",
+		"lab": "^7.x.x",
+		"pg": "^4.x.x",
+		"pg-native": "^1.x.x",
+		"pg-promise": "^2.x.x",
+		"proxyquire": "^1.x.x"
+	},
+	"peerDependencies": {
+		"pg": "^4.x.x"
+	},
+	"engines": {
+		"node": ">=4.0.0"
+	}
 }

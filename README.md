@@ -4,7 +4,7 @@
 
 Wrap requests with a Postgres connection.
 
-[![Build Status](https://travis-ci.org/jedireza/hapi-node-postgres.svg?branch=master)](https://travis-ci.org/jedireza/hapi-node-postgres)
+[![Build Status](https://travis-ci.org/jedireza/hapi-node-postgres.svg?branch=master)](https://travis-ci.org/dszczyt/hapi-pg-promise)
 [![Dependency Status](https://david-dm.org/jedireza/hapi-node-postgres.svg?style=flat)](https://david-dm.org/jedireza/hapi-node-postgres)
 [![devDependency Status](https://david-dm.org/jedireza/hapi-node-postgres/dev-status.svg?style=flat)](https://david-dm.org/jedireza/hapi-node-postgres#info=devDependencies)
 [![peerDependency Status](https://david-dm.org/jedireza/hapi-node-postgres/peer-status.svg?style=flat)](https://david-dm.org/jedireza/hapi-node-postgres#info=peerDependencies)

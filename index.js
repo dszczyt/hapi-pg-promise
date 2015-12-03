@@ -8,9 +8,7 @@ const DEFAULTS = {
     init: {
 
     },
-    config: {
-        cn: undefined
-    }
+    cn: undefined
     /*config: {
         connectionString: undefined,
         //native: false,
@@ -22,41 +20,40 @@ const DEFAULTS = {
 
 exports.register = function (server, options, next) {
 
-    const init = Hoek.applyToDefaults(DEFAULTS.init, options.init);
-    const config = Hoek.applyToDefaults(DEFAULTS.config, options.config);
+    const opts = Hoek.applyToDefaults(DEFAULTS, options);
+    //const config = Hoek.applyToDefaults(DEFAULTS.config, options.config);
 
-    const pgp = pg_promise(init);
+    const pgp = pg_promise(opts.init);
+    const db = pgp(opts.cn);
 
     /*if (config.native) {
         Pg = require('pg').native;
     }*/
 
-    let db; // shared connection object
-    let sco;
+    //let db; // shared connection object
+    //let sco;
 
-    server.on('start', function(server, next) {
+    /*server.on('start', () => {
 
         console.log('server start');
-        server.db = pgp(config.cn).connect();
-        server.db.then(function(obj) { sco = sco; });
-        next();
-    });
-
-    server.ext('onPreHandler', function(request, reply) {
-
-        console.log('request');
-        request.server.db.then(() => {
-
-            request.sco = sco;
-            reply.continue();
-        }).catch((err) => reply(err));
-    });
-
-    /*server.on('tail', function(request, err) {
-
-        console.log('tail');
-        sco.done();
+        server['db'] = pgp(opts.config.cn);
+        //server['db'].then(function(obj) { sco = sco; });
+        //next();
     });*/
+
+    server.ext('onPreHandler', (request, reply) => {
+
+        //console.log('request', request.server['db']);
+        request.db = db;
+        reply.continue();
+    });
+
+    server.on('stop', () => {
+
+        // console.log('tail');
+        //request['db'].
+        pgp.end();
+    });
 
     /*, (err, client, done) => {
 
@@ -76,13 +73,13 @@ exports.register = function (server, options, next) {
     });*/
 
 
-    server.on('stop', (server, err) => {
+    // server.on('stop', (server, err) => {
 
         /*if (request.pgp) {
             request.pgp.end();
             //request.pgp.done(request.pg.kill);
         }*/
-    });
+    // });
 
 
     next();
