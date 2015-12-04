@@ -28,7 +28,7 @@ can use to make DB requests.
 const plugin = {
     register: require('hapi-pg-promise'),
     options: {
-        cn: 'postgres://username:password@localhost/database',
+        cn: 'postgres://username:password@host:port/database',
         settings: {
           // pg-promise options
         }
@@ -48,7 +48,7 @@ server.register(plugin, (err) => {
 ```json
 "plugins": {
     "hapi-pg-promise": {
-        "cn": "postgres://username:password@localhost/database",
+        "cn": "postgres://username:password@host:port/database",
         "settings": {
           ...
         }
