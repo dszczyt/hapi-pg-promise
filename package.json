@@ -1,6 +1,6 @@
 {
 	"name": "hapi-pg-promise",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Wrap requests with a pg connection.",
 	"keywords": [
 		"hapi",
