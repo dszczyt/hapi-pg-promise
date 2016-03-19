@@ -1,6 +1,6 @@
 {
 	"name": "hapi-pg-promise",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Wrap requests with a pg connection.",
 	"keywords": [
 		"hapi",
@@ -34,8 +34,8 @@
 		"proxyquire": "^1.x.x"
 	},
 	"peerDependencies": {
-		"hapi": "12.x",
-		"pg-promise": "3.x"
+		"hapi": "^12.x",
+		"pg-promise": "^3.x"
 	},
 	"engines": {
 		"node": ">=4.0.0"
