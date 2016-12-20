@@ -21,6 +21,8 @@ exports.register = (server, options, next) => {
         reply.continue();
     });
 
+    server.expose('db', db);
+    
     server.on('stop', () => {
 
         pgp.end();
