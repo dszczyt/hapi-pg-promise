@@ -33,8 +33,7 @@
 		"lab": "^15.x.x"
 	},
 	"peerDependencies": {
-		"hapi": ">=17.0.0",
-		"pg-promise": "8.x"
+		"hapi": ">=17.0.0"
 	},
 	"engines": {
 		"node": ">=8.0.0"
