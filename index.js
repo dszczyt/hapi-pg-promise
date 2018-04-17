@@ -26,6 +26,6 @@ module.exports = {
 
         server.expose('db', db);
 
-        server.on('stop', pgp.end);
+        server.events.on('stop', pgp.end);
     }
 };
