@@ -9,7 +9,7 @@ const DEFAULTS = {
     cn: undefined
 };
 
-exports.register = {
+module.exports = {
     pkg,
     register(server, options) {
 
