@@ -16,17 +16,24 @@ We use the [`pg-promise`](https://github.com/vitaly-t/pg-promise) (`pg-promise`)
 $ npm install hapi-pg-promise
 ```
 
-
 ## Usage
 
 In your request handlers you'll have access to `request.db` which you
 can use to make DB requests.
 
-#### Register the plugin manually.
+`server.plugins['hapi-pg-promise'].db` is available outside of request
+handlers.
+
+### Hapi 17
+
+Current version works with Hapi 17.x.x. For older versions use 1.0.0 of hapi-pg-promise.
+
+#### Register the plugin
 
 ```js
+const hapiPgPromise = require('hapi-pg-promise');
 const plugin = {
-    register: require('hapi-pg-promise'),
+    plugin: hapiPgPromise,
     options: {
         cn: 'postgres://username:password@host:port/database',
         settings: {
@@ -35,25 +42,7 @@ const plugin = {
     }
 };
 
-server.register(plugin, (err) => {
-
-    if (err) {
-        console.error('Failed loading "hapi-pg-promise" plugin');
-    }
- });
-```
-
-#### Or include it in your composer manifest.
-
-```json
-"plugins": {
-    "hapi-pg-promise": {
-        "cn": "postgres://username:password@host:port/database",
-        "settings": {
-          ...
-        }
-    }
-}
+server.register(plugin);
 ```
 
 ## License
